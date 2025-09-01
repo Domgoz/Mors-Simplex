@@ -5,6 +5,9 @@
 
   "description": "A simple firefox extension showing the approaching abyss.",
 
+"icons": {
+  "48" : "icon.png"
+},
 
   "permissions": [
     "storage"
