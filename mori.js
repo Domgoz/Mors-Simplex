@@ -1,4 +1,19 @@
 
+
+function submitDate() {
+    const dateValue = document.getElementById("dateDeath").value;
+    if (dateValue) {
+        const d = new Date();
+        d.setFullYear(d.getFullYear() + 20);
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = "dateOfDeath=" + dateValue + ";" + expires + ";path=/";
+        alert("Cookie set: dateOfDeath = " + dateValue);
+        console.log(dateValue);
+     } else {
+            alert("Please select a date.");
+        }
+    }
+
 var countDownDate = new Date("Jan 5, 2030 15:37:25").getTime();
 
 var x = setInterval(function() {

@@ -15,6 +15,6 @@
   ],
 
   "chrome_url_overrides": {
-    "newtab": "mori.html"
+    "newtab": "setup.html"
   }
 }
