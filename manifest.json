@@ -2,19 +2,14 @@
   "manifest_version": 2,
   "name": "Mors-Simplex",
   "version": "1.0",
-
   "description": "A simple firefox extension showing the approaching abyss.",
-
-  
-"icons": {
-  "48" : "icon.png"
-},
-
+  "icons": {
+    "48": "icon.png"
+  },
   "permissions": [
     "storage"
   ],
-
   "chrome_url_overrides": {
-    "newtab": "setup.html"
+    "newtab": "mori.html"
   }
 }
