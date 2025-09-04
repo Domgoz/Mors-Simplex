@@ -2,7 +2,6 @@ function submitDate() {
     const dateValue = document.getElementById("dateDeath").value;
     if (dateValue) {
         localStorage.setItem("dateOfDeath", dateValue);
-        alert("Date saved: dateOfDeath = " + dateValue);
         window.location.replace("mori.html");
     } else {
         alert("Please select a date.");
@@ -32,7 +31,7 @@ function setUpCountdown(dateString) {
             timesEl.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
             if (distance < 0) {
                 clearInterval(window.countdownInterval);
-                timesEl.innerHTML = "EXPIRED";
+                timesEl.innerHTML = "Still here?";
             }
         }
     }, 1000);

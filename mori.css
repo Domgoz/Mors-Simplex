@@ -3,9 +3,53 @@ body {
     color: white;
     display: grid;
     place-items: center;
-    height: 100vh; 
-    margin: 0; 
+    height: 50vh; 
+    margin: 200px; 
 }
+
+.btn {
+  background: linear-gradient(135deg, #232526, #1a1a1f 70%);
+  color: #e0e0e0;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7em 1.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(30,30,30,0.35);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover,
+.btn:focus {
+  background: linear-gradient(135deg, #2c2d32, #232526 70%);
+  transform: translateY(-2px) scale(1.03);
+  outline: none;
+}
+
+.date-input {
+  background: #232526;
+  color: #e0e0e0;
+  border: 1.5px solid #36373d;
+  border-radius: 8px;
+  padding: 0.6em 1em;
+  font-size: 1rem;
+  margin: 0.5em 0;
+  box-shadow: 0 1px 4px rgba(30,30,30,0.2);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.date-input:focus {
+  border-color: #7677c6;
+  box-shadow: 0 0 0 2px #7677c633;
+  outline: none;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  filter: invert(80%);
+  opacity: 0.7;
+}
+
 
 p {
     text-align: center;
