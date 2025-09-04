@@ -9,15 +9,13 @@ function submitDate() {
 }
 
 function setUpCountdown(dateString) {
-    let countDownDate = dateString
-        ? new Date(dateString).getTime()
-        : new Date("Jan 5, 2030 15:37:25").getTime();
+    let countDownDate = new Date(dateString).getTime();
 
     if (window.countdownInterval) {
         clearInterval(window.countdownInterval);
     }
 
-    window.countdownInterval = setInterval(function() {
+    function updateCountdown(countDownDate) {
         var now = new Date().getTime();
         var distance = countDownDate - now;
 
@@ -32,10 +30,22 @@ function setUpCountdown(dateString) {
             if (distance < 0) {
                 clearInterval(window.countdownInterval);
                 timesEl.innerHTML = "Still here?";
+                document.getElementById('insert').innerHTML = '<input type="button" class="btn" value="Reestimate" id="Reset">';
+
+                if (Reset) Reset.addEventListener("click", function() {
+                    localStorage.removeItem("dateOfDeath"); 
+                    window.location.replace('setup.html');
+                });                  
             }
         }
+    }
+
+    updateCountdown(countDownDate);
+
+    window.countdownInterval = setInterval(function() {
+        updateCountdown(countDownDate);
     }, 1000);
-}
+}   
 
 document.addEventListener("DOMContentLoaded", function() {
     if (!localStorage.getItem("dateOfDeath") && !window.location.pathname.endsWith("setup.html"))  {
