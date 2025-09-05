@@ -3,8 +3,8 @@ body {
     color: white;
     display: grid;
     place-items: center;
-    height: 50vh; 
-    margin: 200px; 
+    min-height: 100vh;
+    margin: 0;
 }
 
 .btn {
@@ -54,4 +54,11 @@ body {
 p {
     text-align: center;
     font-size: 450%;
+}
+
+.center-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
