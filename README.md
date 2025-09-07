@@ -7,7 +7,7 @@ I originally used [lifeisshort.fyi](lifeisshort.fyi), but i had a very spesific 
 ## Install
 Firefox : Coming soon on the extension store.
 
-Chromeium: 3-dot icon -> Extensions -> Manage Extensions -> Devoloper mode -> Load unpacked -> Select the extension folder.
+Chromium: 3-dot icon -> Extensions -> Manage Extensions -> Devoloper mode -> Load unpacked -> Select the extension folder.
 
 ## Todo:
 - [ ] Add some minor customizability options (background, daily quotes, day stats)
