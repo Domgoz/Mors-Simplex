@@ -32,10 +32,13 @@ function setUpCountdown(dateString) {
                 timesEl.innerHTML = "Still here?";
                 document.getElementById('insert').innerHTML = '<input type="button" class="btn" value="Reestimate" id="Reset">';
 
-                if (Reset) Reset.addEventListener("click", function() {
-                    localStorage.removeItem("dateOfDeath"); 
-                    window.location.replace('setup.html');
-                });                  
+                const resetBtn = document.getElementById('Reset');
+                if (resetBtn) {
+                    resetBtn.addEventListener("click", function() {
+                        localStorage.removeItem("dateOfDeath"); 
+                        window.location.replace('setup.html');
+                    });
+                }
             }
         }
     }
@@ -56,4 +59,25 @@ document.addEventListener("DOMContentLoaded", function() {
     if (submitBtn) submitBtn.addEventListener("click", submitDate);
     const savedDate = localStorage.getItem("dateOfDeath");
     setUpCountdown(savedDate);
+
+    const gearBtn = document.getElementById('gear-btn');
+    const gearMenu = document.getElementById('gear-menu');
+    const menuReset = document.getElementById('menu-reset');
+
+    gearBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        gearMenu.style.display = gearMenu.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!gearMenu.contains(e.target) && e.target !== gearBtn) {
+            gearMenu.style.display = 'none';
+        }
+    });
+
+    menuReset.addEventListener('click', function(e) {
+        e.preventDefault();
+        localStorage.removeItem("dateOfDeath"); 
+        window.location.replace('setup.html');
+    });
 });

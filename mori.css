@@ -50,7 +50,6 @@ body {
   opacity: 0.7;
 }
 
-
 p {
     text-align: center;
     font-size: 450%;
@@ -61,4 +60,52 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.gear-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 100;
+    color: #222;
+    transition: color 0.2s;
+}
+
+.gear-button:hover {
+    color: #555;
+}
+
+.gear-menu {
+    position: absolute;
+    top: 56px; /* below the button */
+    right: 16px;
+    background: #83888b;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    z-index: 101;
+    min-width: 140px;
+    padding: 8px 0;
+}
+
+.gear-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.gear-menu li {
+    padding: 0;
+}
+
+.gear-menu a {
+    display: block;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.15s;
 }
