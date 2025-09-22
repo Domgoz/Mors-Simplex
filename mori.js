@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.replace('setup.html');
         return;
     }
+
+    var savedSize = localStorage.getItem("fontSize");
     var submitBtn = document.getElementById("submitbtn");
     if (submitBtn) submitBtn.addEventListener("click", submitDate);
     const savedDate = localStorage.getItem("dateOfDeath");
@@ -63,6 +65,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const gearBtn = document.getElementById('gear-btn');
     const gearMenu = document.getElementById('gear-menu');
     const menuReset = document.getElementById('menu-reset');
+
+    if (savedSize) {
+        document.getElementById("times").style.fontSize = savedSize + "%";
+        document.getElementById("font-size").value = savedSize;
+    }
 
     gearBtn.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -78,6 +85,14 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("font-change").addEventListener("change", function(e) {
         document.getElementById("times").style.fontFamily = e.target.value;
     })
+
+    document.getElementById("font-size").addEventListener("input", function(e) {
+        var size = e.target.value; 
+        if (size) {
+            document.getElementById("times").style.fontSize = e.target.value + "%";
+         localStorage.setItem("fontSize", size);
+        }
+});
 
     menuReset.addEventListener('click', function(e) {
         e.preventDefault();
