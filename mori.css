@@ -81,7 +81,7 @@ p {
 
 .gear-menu {
     position: absolute;
-    top: 56px; /* below the button */
+    top: 56px; 
     right: 16px;
     background: #83888b;
     border: 1px solid #ccc;

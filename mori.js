@@ -75,6 +75,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    document.getElementById("font-change").addEventListener("change", function(e) {
+        document.getElementById("times").style.fontFamily = e.target.value;
+    })
+
     menuReset.addEventListener('click', function(e) {
         e.preventDefault();
         localStorage.removeItem("dateOfDeath"); 
